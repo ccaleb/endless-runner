@@ -1,6 +1,5 @@
 package
 {
-	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.events.EnterFrameEvent;
 	import starling.events.Event;
@@ -18,8 +17,6 @@ package
 		private var scroller :Scroller;
 		private var viewportX :Number;
 		private var textureAtlas :TextureAtlas;
-		private var wallSlicePool :WallSlicePool;
-		private var walls :Walls;
 		
 		public function MainStarling()
 		{
@@ -29,11 +26,7 @@ package
 		
 		private function addedToStage(e :Event) :void
 		{
-			scroller = new Scroller(this);
-			
-			walls = new Walls(textureAtlas);
-			addChild(walls);
-			
+			scroller = new Scroller(this, textureAtlas);
 			addEventListener(EnterFrameEvent.ENTER_FRAME, update);
 		}
 		
@@ -47,8 +40,7 @@ package
 		
 		private function update(e :EnterFrameEvent) :void
 		{
-			scroller.moveViewportXBy(0.1);
-			walls.setViewportX(0);
+			scroller.moveViewportXBy(1);
 		}
 	}
 }

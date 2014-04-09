@@ -7,7 +7,7 @@ package
 	
 	public final class Mid extends Image
 	{
-		static private var DELTA_X :Number = 0.032;
+		static private var DELTA_X :Number = 0.0032;
 		
 		[Embed(source="../resources/bg-mid.png")]
 		private var EmbeddedBitmap :Class;

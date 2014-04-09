@@ -27,22 +27,19 @@ package
 			
 			viewportX = 0;
 			viewportSliceX = 0;
-			
-			createTestWallSpan();
 		}
 		
 		public function setViewportX(viewportX :Number) :void
 		{
-			viewportX = checkViewportXBounds(viewportX);
-			
+			this.viewportX = checkViewportXBounds(viewportX);
 			var prevViewportSliceX :int = viewportSliceX;
-			viewportSliceX = Math.floor(viewportX/WallSlice.WIDTH);
+			this.viewportSliceX = Math.floor(this.viewportX/WallSlice.WIDTH);
 			
 			removeOldSlices(prevViewportSliceX);
 			addNewSlices();
 		}
 		
-		public function addSlice(sliceType :int, y :Number) :void
+		public function addSlice(sliceType :int, y :Number = 0) :void
 		{
 			var slice :WallSlice = new WallSlice(sliceType, y);
 			slices.push(slice);
@@ -50,8 +47,7 @@ package
 		
 		private function checkViewportXBounds(viewportX :Number) :Number
 		{
-			var maxViewportX :Number = (slices.length - Walls.VIEWPORT_NUM_SLICES) *
-									   WallSlice.WIDTH;
+			var maxViewportX :Number = (slices.length - Walls.VIEWPORT_NUM_SLICES) * WallSlice.WIDTH;
 			if (viewportX < 0)
 			{
 				viewportX = 0;
@@ -90,7 +86,22 @@ package
 		
 		private function removeOldSlices(prevViewportSliceX :Number) :void
 		{
-			// @todo
+			var numOldSlices :int = viewportSliceX - prevViewportSliceX;
+			if (numOldSlices > Walls.VIEWPORT_NUM_SLICES)
+			{
+				numOldSlices = Walls.VIEWPORT_NUM_SLICES;
+			}
+			
+			for (var i :int = prevViewportSliceX; i < prevViewportSliceX + numOldSlices; i++)
+			{
+				var slice :WallSlice = slices[i];
+				if (slice.image != null)
+				{
+					returnWallSlice(slice.type, slice.image);
+					removeChild(slice.image);
+					slice.image = null;
+				}
+			}
 		}
 		
 		private function createLookupTables() :void
@@ -118,19 +129,6 @@ package
 		private function returnWallSlice(sliceType :int, sliceImage :Image) :void
 		{
 			returnWallSliceLookup[sliceType].call(pool, sliceImage);
-		}
-		
-		private function createTestWallSpan() :void
-		{
-			addSlice(SliceType.FRONT, 192);
-			addSlice(SliceType.WINDOW, 192);
-			addSlice(SliceType.DECORATION, 192);
-			addSlice(SliceType.WINDOW, 192);
-			addSlice(SliceType.DECORATION, 192);
-			addSlice(SliceType.WINDOW, 192);
-			addSlice(SliceType.DECORATION, 192);
-			addSlice(SliceType.WINDOW, 192);
-			addSlice(SliceType.BACK, 192);
 		}
 	}
 }
