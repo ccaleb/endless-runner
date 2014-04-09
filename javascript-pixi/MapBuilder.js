@@ -1,5 +1,6 @@
 function MapBuilder(walls) {
-	this.walls = walls;this.createMap();
+	this.walls = walls;
+	this.createMap();
 }
 
 MapBuilder.WALL_HEIGHTS = [
