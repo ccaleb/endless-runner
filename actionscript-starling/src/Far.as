@@ -7,10 +7,10 @@ package
 	
 	public final class Far extends Image
 	{
-		static private var DELTA_X :Number = 0.0064;
+		static private const DELTA_X :Number = 0.00016;
 		
 		[Embed(source="../resources/bg-far.png")]
-		private var EmbeddedBitmap :Class;
+		static private const EmbeddedBitmap :Class;
 		
 		private var viewportX :Number;
 		private var tempPoint :Point;

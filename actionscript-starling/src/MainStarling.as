@@ -9,17 +9,23 @@ package
 	public class MainStarling extends Sprite
 	{
 		[Embed(source="../resources/wall.png")]
-		private var EmbeddedSpriteSheet :Class;
+		static private const EmbeddedSpriteSheet :Class;
 		
 		[Embed(source="../resources/wall.xml", mimeType="application/octet-stream")]
-		private const EmbeddedXML:Class;
+		static private const EmbeddedXML:Class;
 		
-		private var scroller :Scroller;
-		private var viewportX :Number;
+		static private const MIN_SCROLL_SPEED    :Number = 5;
+		static private const MAX_SCROLL_SPEED    :Number = 15;
+		static private const SCROLL_ACCELERATION :Number = 0.005;
+		
 		private var textureAtlas :TextureAtlas;
+		private var scroller     :Scroller;
+		private var viewportX    :Number;
+		private var scrollSpeed  :Number;
 		
 		public function MainStarling()
 		{
+			scrollSpeed = MainStarling.MIN_SCROLL_SPEED;
 			addEventListener(Event.ADDED_TO_STAGE, addedToStage);
 			setupSpriteSheet();
 		}
@@ -40,7 +46,12 @@ package
 		
 		private function update(e :EnterFrameEvent) :void
 		{
-			scroller.moveViewportXBy(1);
+			scroller.moveViewportXBy(scrollSpeed);
+			scrollSpeed += MainStarling.SCROLL_ACCELERATION;
+			if (scrollSpeed > MainStarling.MAX_SCROLL_SPEED)
+			{
+				scrollSpeed = MainStarling.MAX_SCROLL_SPEED;
+			}
 		}
 	}
 }

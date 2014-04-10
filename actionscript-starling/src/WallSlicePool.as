@@ -6,11 +6,11 @@ package
 	public final class WallSlicePool
 	{
 		private var textureAtlas :TextureAtlas;
-		private var windows :Vector.<Image>;
-		private var decorations :Vector.<Image>;
-		private var frontEdges :Vector.<Image>;
-		private var backEdges :Vector.<Image>;
-		private var steps :Vector.<Image>;
+		private var windows      :Vector.<Image>;
+		private var decorations  :Vector.<Image>;
+		private var frontEdges   :Vector.<Image>;
+		private var backEdges    :Vector.<Image>;
+		private var steps        :Vector.<Image>;
 		
 		public function WallSlicePool(textureAtlas :TextureAtlas)
 		{
