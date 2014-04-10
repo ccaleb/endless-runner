@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:d7e76234b4a01e97214b7febf5875d35:7a7176ee4a47114ab8e7e8ecb8c361fc:ff567d6aa6aaeaf13b816a12cfcfc095$ -->
+<!-- $TexturePacker:SmartUpdate:90a7179064dc8c4c96e2b2a204b54c0f:7a7176ee4a47114ab8e7e8ecb8c361fc:ff567d6aa6aaeaf13b816a12cfcfc095$ -->
 <TextureAtlas imagePath="wall.png">
-    <SubTexture name="decoration_01" x="2" y="2" width="64" height="256"/>
-    <SubTexture name="decoration_02" x="68" y="2" width="64" height="256"/>
-    <SubTexture name="decoration_03" x="134" y="2" width="64" height="256"/>
-    <SubTexture name="edge_01" x="2" y="260" width="64" height="256"/>
-    <SubTexture name="edge_02" x="68" y="260" width="64" height="256"/>
-    <SubTexture name="step_01" x="134" y="260" width="64" height="256"/>
-    <SubTexture name="window_01" x="2" y="518" width="64" height="256"/>
-    <SubTexture name="window_02" x="68" y="518" width="64" height="256"/>
+    <SubTexture name="decoration_01" x="192" y="256" width="64" height="256"/>
+    <SubTexture name="decoration_02" x="192" y="0" width="64" height="256"/>
+    <SubTexture name="decoration_03" x="128" y="256" width="64" height="256"/>
+    <SubTexture name="edge_01" x="128" y="0" width="64" height="256"/>
+    <SubTexture name="edge_02" x="64" y="256" width="64" height="256"/>
+    <SubTexture name="step_01" x="64" y="0" width="64" height="256"/>
+    <SubTexture name="window_01" x="0" y="256" width="64" height="256"/>
+    <SubTexture name="window_02" x="0" y="0" width="64" height="256"/>
 </TextureAtlas>
