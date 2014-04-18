@@ -13,6 +13,7 @@
 {
     SKTextureAtlas *textureAtlas;
     Scroller *scroller;
+    CGFloat scrollSpeed;
 }
 
 -(id)initWithSize:(CGSize)size {
@@ -21,6 +22,7 @@
         
         textureAtlas = [SKTextureAtlas atlasNamed:@"wallslices"];
         scroller = [[Scroller alloc] initWithNode:self withTextureAtlas:textureAtlas];
+        scrollSpeed = MIN_SCROLL_SPEED;
     }
     return self;
 }
@@ -30,7 +32,12 @@
 }
 
 -(void)update:(CFTimeInterval)currentTime {
-    [scroller moveViewportXBy:8];
+    [scroller moveViewportXBy:scrollSpeed];
+    scrollSpeed += SCROLL_ACCELERATION;
+    if (scrollSpeed > MAX_SCROLL_SPEED)
+    {
+        scrollSpeed = MAX_SCROLL_SPEED;
+    }
 }
 
 @end

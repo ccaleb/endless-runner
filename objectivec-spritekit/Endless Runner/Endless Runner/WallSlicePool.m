@@ -197,7 +197,7 @@
     for (NSInteger i = 0; i < amount; i++)
     {
         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:[_textureAtlas textureNamed:name]];
-        sprite.anchorPoint = CGPointMake(0.0, 0.0);
+        sprite.anchorPoint = CGPointMake(0.0, -0.25);
         [steps addObject:sprite];
     }
 }

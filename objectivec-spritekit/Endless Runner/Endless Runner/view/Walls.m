@@ -35,9 +35,6 @@
         
         viewportX = 0;
         viewportSliceX = 0;
-        
-        [self addTestSlices];
-        //[self displayTestWall];
     }
     
     return self;
@@ -48,7 +45,6 @@
     viewportX = [self checkViewportXBounds:newViewportX];
     NSInteger prevViewportSliceX = viewportSliceX;
     viewportSliceX = floor(viewportX / WALL_SLICE_WIDTH);
-    
     [self removeOldSlices: prevViewportSliceX];
     [self addNewSlices];
 }
@@ -66,7 +62,7 @@
     {
         newViewportX = 0;
     }
-    else if (viewportX > maxViewportX)
+    else if (newViewportX > maxViewportX)
     {
         newViewportX = maxViewportX;
     }
@@ -150,82 +146,5 @@
 - (void)returnWallSlice:(SliceType)sliceType usingSprite:(SKSpriteNode *)sprite
 {
     [pool performSelector:returnWallSliceLookup[sliceType] withObject:sprite];
-}
-
-- (void)addTestSlices
-{
-    [self addSlice:kSliceTypeFront atYPosition:0.0];
-    [self addSlice:kSliceTypeWindow atYPosition:0.0];
-    [self addSlice:kSliceTypeDecoration atYPosition:0.0];
-    [self addSlice:kSliceTypeWindow atYPosition:0.0];
-    [self addSlice:kSliceTypeStep atYPosition:0.0];
-    [self addSlice:kSliceTypeWindow atYPosition:-128.0];
-    [self addSlice:kSliceTypeDecoration atYPosition:-128.0];
-    [self addSlice:kSliceTypeBack atYPosition:-128.0];
-    [self addSlice:kSliceTypeGap];
-    [self addSlice:kSliceTypeFront atYPosition:0.0];
-    [self addSlice:kSliceTypeWindow atYPosition:0.0];
-    [self addSlice:kSliceTypeDecoration atYPosition:0.0];
-    [self addSlice:kSliceTypeWindow atYPosition:0.0];
-    [self addSlice:kSliceTypeStep atYPosition:0.0];
-    [self addSlice:kSliceTypeWindow atYPosition:-128.0];
-    [self addSlice:kSliceTypeDecoration atYPosition:-128.0];
-    [self addSlice:kSliceTypeBack atYPosition:-128.0];
-    [self addSlice:kSliceTypeGap];
-    [self addSlice:kSliceTypeFront atYPosition:0.0];
-    [self addSlice:kSliceTypeWindow atYPosition:0.0];
-    [self addSlice:kSliceTypeDecoration atYPosition:0.0];
-    [self addSlice:kSliceTypeWindow atYPosition:0.0];
-    [self addSlice:kSliceTypeStep atYPosition:0.0];
-    [self addSlice:kSliceTypeWindow atYPosition:-128.0];
-    [self addSlice:kSliceTypeDecoration atYPosition:-128.0];
-    [self addSlice:kSliceTypeBack atYPosition:-128.0];
-    [self addSlice:kSliceTypeGap];
-    [self addSlice:kSliceTypeFront atYPosition:0.0];
-    [self addSlice:kSliceTypeWindow atYPosition:0.0];
-    [self addSlice:kSliceTypeDecoration atYPosition:0.0];
-    [self addSlice:kSliceTypeWindow atYPosition:0.0];
-    [self addSlice:kSliceTypeStep atYPosition:0.0];
-    [self addSlice:kSliceTypeWindow atYPosition:-128.0];
-    [self addSlice:kSliceTypeDecoration atYPosition:-128.0];
-    [self addSlice:kSliceTypeBack atYPosition:-128.0];
-    [self addSlice:kSliceTypeGap];
-}
-
-- (void)displayTestWall
-{
-    SKSpriteNode *slice;
-    CGFloat y = 0.0;
-    for (NSInteger i = 0; i < 8; i++)
-    {
-        if (i > 4)
-        {
-            y = -128.0;
-        }
-        
-        if (i == 0)
-        {
-            slice = [pool borrowFrontEdge];
-        }
-        else if (i == 7)
-        {
-            slice = [pool borrowBackEdge];
-        }
-        else if (i == 4)
-        {
-            slice = [pool borrowStep];
-        }
-        else if (i % 2 == 0)
-        {
-            slice = [pool borrowWindow];
-        }
-        else
-        {
-            slice = [pool borrowDecoration];
-        }
-        //slice.anchorPoint = CGPointMake(0.0, 0.0);
-        slice.position = CGPointMake(i * 128.0, y);
-        [self addChild:slice];
-    }
 }
 @end

@@ -11,6 +11,7 @@
 		8592643818FDE4640047938D /* Scroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 8592643718FDE4640047938D /* Scroller.m */; };
 		8592643B18FE00A20047938D /* WallSlice.m in Sources */ = {isa = PBXBuildFile; fileRef = 8592643A18FE00A20047938D /* WallSlice.m */; };
 		859C1D4518FF1FF3005EE405 /* WallSlicePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 859C1D4418FF1FF3005EE405 /* WallSlicePool.m */; };
+		859CE78419015152003F410A /* MapBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 859CE78319015152003F410A /* MapBuilder.m */; };
 		85A696961900697300020C33 /* Walls.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A696951900697300020C33 /* Walls.m */; };
 		85AE4F0B18FC7ADF0032B4DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85AE4F0A18FC7ADF0032B4DD /* Foundation.framework */; };
 		85AE4F0D18FC7ADF0032B4DD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85AE4F0C18FC7ADF0032B4DD /* CoreGraphics.framework */; };
@@ -54,6 +55,8 @@
 		8592643A18FE00A20047938D /* WallSlice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WallSlice.m; path = model/WallSlice.m; sourceTree = "<group>"; };
 		859C1D4318FF1FF3005EE405 /* WallSlicePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallSlicePool.h; sourceTree = "<group>"; };
 		859C1D4418FF1FF3005EE405 /* WallSlicePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallSlicePool.m; sourceTree = "<group>"; };
+		859CE78219015152003F410A /* MapBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapBuilder.h; path = model/MapBuilder.h; sourceTree = "<group>"; };
+		859CE78319015152003F410A /* MapBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapBuilder.m; path = model/MapBuilder.m; sourceTree = "<group>"; };
 		85A696941900697300020C33 /* Walls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Walls.h; path = view/Walls.h; sourceTree = "<group>"; };
 		85A696951900697300020C33 /* Walls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Walls.m; path = view/Walls.m; sourceTree = "<group>"; };
 		85AE4F0718FC7ADF0032B4DD /* Endless Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Endless Runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,8 +121,8 @@
 				8592643A18FE00A20047938D /* WallSlice.m */,
 				859C1D4318FF1FF3005EE405 /* WallSlicePool.h */,
 				859C1D4418FF1FF3005EE405 /* WallSlicePool.m */,
-				85A696941900697300020C33 /* Walls.h */,
-				85A696951900697300020C33 /* Walls.m */,
+				859CE78219015152003F410A /* MapBuilder.h */,
+				859CE78319015152003F410A /* MapBuilder.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -223,6 +226,8 @@
 				8592643418FDDFB80047938D /* Far.m */,
 				8592643618FDE4640047938D /* Scroller.h */,
 				8592643718FDE4640047938D /* Scroller.m */,
+				85A696941900697300020C33 /* Walls.h */,
+				85A696951900697300020C33 /* Walls.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -335,6 +340,7 @@
 				8592643818FDE4640047938D /* Scroller.m in Sources */,
 				85A696961900697300020C33 /* Walls.m in Sources */,
 				8592643518FDDFB80047938D /* Far.m in Sources */,
+				859CE78419015152003F410A /* MapBuilder.m in Sources */,
 				859C1D4518FF1FF3005EE405 /* WallSlicePool.m in Sources */,
 				85AE4F1918FC7ADF0032B4DD /* main.m in Sources */,
 				85AE4F4F18FC9F010032B4DD /* Mid.m in Sources */,

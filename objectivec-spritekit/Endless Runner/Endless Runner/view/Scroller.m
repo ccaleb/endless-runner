@@ -10,12 +10,14 @@
 #import "Far.h"
 #import "Mid.h"
 #import "Walls.h"
+#import "MapBuilder.h"
 
 @implementation Scroller
 {
     Far *far;
     Mid *mid;
     Walls *front;
+    MapBuilder *mapBuilder;
     CGFloat _viewportX;
 }
 
@@ -26,11 +28,14 @@
         far = [[Far alloc] init];
         mid = [[Mid alloc] init];
         front = [[Walls alloc] initWithTextureAtlas:textureAtlas];
-        _viewportX = 0.0;
         
         [node addChild:far];
         [node addChild:mid];
         [node addChild:front];
+        
+        mapBuilder = [[MapBuilder alloc] initWithWalls:front];
+        
+        _viewportX = 0.0;
     }
     
     return self;
