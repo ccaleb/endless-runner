@@ -9,24 +9,28 @@
 #import "Scroller.h"
 #import "Far.h"
 #import "Mid.h"
+#import "Walls.h"
 
 @implementation Scroller
 {
     Far *far;
     Mid *mid;
+    Walls *front;
     CGFloat _viewportX;
 }
 
-- (id)initWithNode:(SKNode *)node
+- (id)initWithNode:(SKNode *)node withTextureAtlas:(SKTextureAtlas *)textureAtlas
 {
     self = [super init];
     if (self) {
         far = [[Far alloc] init];
         mid = [[Mid alloc] init];
+        front = [[Walls alloc] initWithTextureAtlas:textureAtlas];
         _viewportX = 0.0;
         
         [node addChild:far];
         [node addChild:mid];
+        [node addChild:front];
     }
     
     return self;
@@ -37,6 +41,7 @@
     _viewportX = viewportX;
     [far setViewportX:viewportX];
     [mid setViewportX:viewportX];
+    [front setViewportX:viewportX];
 }
 
 - (CGFloat)getViewportX

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 
-static const CGFloat WALL_SLICE_WIDTH = 128;
+static const NSInteger WALL_SLICE_WIDTH = 128;
 
 typedef enum SliceType :NSInteger {
     kSliceTypeFront,

@@ -9,7 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface Scroller : SKNode
-- (id)initWithNode:(SKNode *)node;
+- (id)initWithNode:(SKNode *)node withTextureAtlas:(SKTextureAtlas *)textureAtlas;
 - (void)setViewportX:(CGFloat)viewportX;
 - (CGFloat)getViewportX;
 - (void)moveViewportXBy:(CGFloat)units;
