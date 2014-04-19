@@ -18,9 +18,9 @@
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     if (!skView.scene) {
-        skView.showsFPS = YES;
-        skView.showsNodeCount = YES;
-        skView.showsDrawCount = YES;
+        skView.showsFPS = NO;
+        skView.showsNodeCount = NO;
+        skView.showsDrawCount = NO;
     
         // Create and configure the scene.
         SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
